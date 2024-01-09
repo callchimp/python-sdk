@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "callchimp"
-version = "0.1.0"
+version = "0.1.2"
 description = "Callchimp Python SDK"
 authors = ["dynopii<hello@dynopii.com>"]
 license = "MIT"
