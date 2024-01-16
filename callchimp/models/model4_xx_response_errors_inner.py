@@ -19,38 +19,20 @@ import json
 
 
 from typing import Any, ClassVar, Dict, List, Optional
-from pydantic import BaseModel, StrictInt, StrictStr, field_validator
-from pydantic import Field
+from pydantic import BaseModel, StrictStr
 try:
     from typing import Self
 except ImportError:
     from typing_extensions import Self
 
-class CampaignRequest(BaseModel):
+class Model4XXResponseErrorsInner(BaseModel):
     """
-    CampaignRequest
+    Model4XXResponseErrorsInner
     """ # noqa: E501
-    name: StrictStr
-    max_retry: StrictInt = Field(description="How many times call should be retried if not picked up")
-    phone_number: StrictInt = Field(description="PhoneNumber foreign key")
-    type: StrictStr = Field(description="Type of campaign")
-    transaction_template: Optional[StrictStr] = Field(default=None, description="Template text with variable placeholders, where variables are represented like `{var1}`. Only required for `transactional` campaigns.")
-    chat_script: Optional[StrictStr] = Field(default=None, description="The GenAI prompt telling the bot how to behave when asked a question or how to continue the conversation.")
-    __properties: ClassVar[List[str]] = ["name", "max_retry", "phone_number", "type", "transaction_template", "chat_script"]
-
-    @field_validator('max_retry')
-    def max_retry_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in (0, 1, 2):
-            raise ValueError("must be one of enum values (0, 1, 2)")
-        return value
-
-    @field_validator('type')
-    def type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in ('blastout', 'outbound', 'transactional'):
-            raise ValueError("must be one of enum values ('blastout', 'outbound', 'transactional')")
-        return value
+    code: Optional[StrictStr] = None
+    detail: Optional[StrictStr] = None
+    attr: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["code", "detail", "attr"]
 
     model_config = {
         "populate_by_name": True,
@@ -70,7 +52,7 @@ class CampaignRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of CampaignRequest from a JSON string"""
+        """Create an instance of Model4XXResponseErrorsInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -93,7 +75,7 @@ class CampaignRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Dict) -> Self:
-        """Create an instance of CampaignRequest from a dict"""
+        """Create an instance of Model4XXResponseErrorsInner from a dict"""
         if obj is None:
             return None
 
@@ -101,12 +83,9 @@ class CampaignRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "name": obj.get("name"),
-            "max_retry": obj.get("max_retry"),
-            "phone_number": obj.get("phone_number"),
-            "type": obj.get("type"),
-            "transaction_template": obj.get("transaction_template"),
-            "chat_script": obj.get("chat_script")
+            "code": obj.get("code"),
+            "detail": obj.get("detail"),
+            "attr": obj.get("attr")
         })
         return _obj
 

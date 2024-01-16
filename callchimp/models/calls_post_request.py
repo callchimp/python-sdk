@@ -22,6 +22,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
 from callchimp.models.call_request_by_lead_id import CallRequestByLeadId
 from callchimp.models.call_request_by_vendor_lead_code import CallRequestByVendorLeadCode
+from callchimp.models.transaction_call_request_by_lead_id import TransactionCallRequestByLeadId
 from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal
 from pydantic import StrictStr, Field
@@ -30,22 +31,24 @@ try:
 except ImportError:
     from typing_extensions import Self
 
-POSTDEVCALLSREQUEST_ANY_OF_SCHEMAS = ["CallRequestByLeadId", "CallRequestByVendorLeadCode"]
+CALLSPOSTREQUEST_ANY_OF_SCHEMAS = ["CallRequestByLeadId", "CallRequestByVendorLeadCode", "TransactionCallRequestByLeadId"]
 
-class PostDevCallsRequest(BaseModel):
+class CallsPostRequest(BaseModel):
     """
-    PostDevCallsRequest
+    CallsPostRequest
     """
 
     # data type: CallRequestByLeadId
     anyof_schema_1_validator: Optional[CallRequestByLeadId] = None
+    # data type: TransactionCallRequestByLeadId
+    anyof_schema_2_validator: Optional[TransactionCallRequestByLeadId] = None
     # data type: CallRequestByVendorLeadCode
-    anyof_schema_2_validator: Optional[CallRequestByVendorLeadCode] = None
+    anyof_schema_3_validator: Optional[CallRequestByVendorLeadCode] = None
     if TYPE_CHECKING:
-        actual_instance: Optional[Union[CallRequestByLeadId, CallRequestByVendorLeadCode]] = None
+        actual_instance: Optional[Union[CallRequestByLeadId, CallRequestByVendorLeadCode, TransactionCallRequestByLeadId]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Literal[POSTDEVCALLSREQUEST_ANY_OF_SCHEMAS]
+    any_of_schemas: List[str] = Literal[CALLSPOSTREQUEST_ANY_OF_SCHEMAS]
 
     model_config = {
         "validate_assignment": True,
@@ -64,11 +67,17 @@ class PostDevCallsRequest(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_anyof(cls, v):
-        instance = PostDevCallsRequest.model_construct()
+        instance = CallsPostRequest.model_construct()
         error_messages = []
         # validate data type: CallRequestByLeadId
         if not isinstance(v, CallRequestByLeadId):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CallRequestByLeadId`")
+        else:
+            return v
+
+        # validate data type: TransactionCallRequestByLeadId
+        if not isinstance(v, TransactionCallRequestByLeadId):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TransactionCallRequestByLeadId`")
         else:
             return v
 
@@ -80,7 +89,7 @@ class PostDevCallsRequest(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in PostDevCallsRequest with anyOf schemas: CallRequestByLeadId, CallRequestByVendorLeadCode. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in CallsPostRequest with anyOf schemas: CallRequestByLeadId, CallRequestByVendorLeadCode, TransactionCallRequestByLeadId. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -99,7 +108,13 @@ class PostDevCallsRequest(BaseModel):
             return instance
         except (ValidationError, ValueError) as e:
              error_messages.append(str(e))
-        # anyof_schema_2_validator: Optional[CallRequestByVendorLeadCode] = None
+        # anyof_schema_2_validator: Optional[TransactionCallRequestByLeadId] = None
+        try:
+            instance.actual_instance = TransactionCallRequestByLeadId.from_json(json_str)
+            return instance
+        except (ValidationError, ValueError) as e:
+             error_messages.append(str(e))
+        # anyof_schema_3_validator: Optional[CallRequestByVendorLeadCode] = None
         try:
             instance.actual_instance = CallRequestByVendorLeadCode.from_json(json_str)
             return instance
@@ -108,7 +123,7 @@ class PostDevCallsRequest(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into PostDevCallsRequest with anyOf schemas: CallRequestByLeadId, CallRequestByVendorLeadCode. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into CallsPostRequest with anyOf schemas: CallRequestByLeadId, CallRequestByVendorLeadCode, TransactionCallRequestByLeadId. Details: " + ", ".join(error_messages))
         else:
             return instance
 

@@ -15,10 +15,10 @@
 import unittest
 import datetime
 
-from callchimp.models.campaign_request import CampaignRequest
+from callchimp.models.model4_xx_response import Model4XXResponse
 
-class TestCampaignRequest(unittest.TestCase):
-    """CampaignRequest unit test stubs"""
+class TestModel4XXResponse(unittest.TestCase):
+    """Model4XXResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,34 +26,31 @@ class TestCampaignRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CampaignRequest:
-        """Test CampaignRequest
+    def make_instance(self, include_optional) -> Model4XXResponse:
+        """Test Model4XXResponse
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CampaignRequest`
+        # uncomment below to create an instance of `Model4XXResponse`
         """
-        model = CampaignRequest()
+        model = Model4XXResponse()
         if include_optional:
-            return CampaignRequest(
-                name = '',
-                max_retry = 0,
-                phone_number = 56,
-                type = 'blastout',
-                transaction_template = '',
-                chat_script = ''
+            return Model4XXResponse(
+                type = '',
+                errors = [
+                    callchimp.models._4_xx_response_errors_inner._4XXResponse_errors_inner(
+                        code = '', 
+                        detail = '', 
+                        attr = callchimp.models.attr.attr(), )
+                    ]
             )
         else:
-            return CampaignRequest(
-                name = '',
-                max_retry = 0,
-                phone_number = 56,
-                type = 'blastout',
+            return Model4XXResponse(
         )
         """
 
-    def testCampaignRequest(self):
-        """Test CampaignRequest"""
+    def testModel4XXResponse(self):
+        """Test Model4XXResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

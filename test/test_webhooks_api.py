@@ -26,24 +26,10 @@ class TestWebhooksApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_delete_dev_webhooks42(self) -> None:
-        """Test case for delete_dev_webhooks42
+    def test_webhooks_delete(self) -> None:
+        """Test case for webhooks_delete
 
         Delete Webhook by Id
-        """
-        pass
-
-    def test_patch_dev_webhooks41(self) -> None:
-        """Test case for patch_dev_webhooks41
-
-        Update Webhook by Id
-        """
-        pass
-
-    def test_post_dev_webhooks(self) -> None:
-        """Test case for post_dev_webhooks
-
-        Create a Webhook
         """
         pass
 
@@ -58,6 +44,20 @@ class TestWebhooksApi(unittest.TestCase):
         """Test case for webhooks_list
 
         List Webhooks
+        """
+        pass
+
+    def test_webhooks_post(self) -> None:
+        """Test case for webhooks_post
+
+        Create a Webhook
+        """
+        pass
+
+    def test_webhooks_update(self) -> None:
+        """Test case for webhooks_update
+
+        Update Webhook by Id
         """
         pass
 

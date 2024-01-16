@@ -15,10 +15,10 @@
 import unittest
 import datetime
 
-from callchimp.models.campaign_request import CampaignRequest
+from callchimp.models.calls_post_request import CallsPostRequest
 
-class TestCampaignRequest(unittest.TestCase):
-    """CampaignRequest unit test stubs"""
+class TestCallsPostRequest(unittest.TestCase):
+    """CallsPostRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,34 +26,30 @@ class TestCampaignRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CampaignRequest:
-        """Test CampaignRequest
+    def make_instance(self, include_optional) -> CallsPostRequest:
+        """Test CallsPostRequest
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CampaignRequest`
+        # uncomment below to create an instance of `CallsPostRequest`
         """
-        model = CampaignRequest()
+        model = CallsPostRequest()
         if include_optional:
-            return CampaignRequest(
-                name = '',
-                max_retry = 0,
-                phone_number = 56,
-                type = 'blastout',
-                transaction_template = '',
-                chat_script = ''
+            return CallsPostRequest(
+                lead = 56,
+                transaction_vars = callchimp.models.transaction_vars.transaction_vars(),
+                vendor_lead_code = ''
             )
         else:
-            return CampaignRequest(
-                name = '',
-                max_retry = 0,
-                phone_number = 56,
-                type = 'blastout',
+            return CallsPostRequest(
+                lead = 56,
+                transaction_vars = callchimp.models.transaction_vars.transaction_vars(),
+                vendor_lead_code = '',
         )
         """
 
-    def testCampaignRequest(self):
-        """Test CampaignRequest"""
+    def testCallsPostRequest(self):
+        """Test CallsPostRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

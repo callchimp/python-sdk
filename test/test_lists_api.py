@@ -26,15 +26,15 @@ class TestListsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_delete_dev_lists150(self) -> None:
-        """Test case for delete_dev_lists150
+    def test_lists_delete(self) -> None:
+        """Test case for lists_delete
 
         Delete List by Id
         """
         pass
 
-    def test_get_dev_lists137(self) -> None:
-        """Test case for get_dev_lists137
+    def test_lists_get(self) -> None:
+        """Test case for lists_get
 
         Get List by Id
         """
@@ -47,17 +47,17 @@ class TestListsApi(unittest.TestCase):
         """
         pass
 
-    def test_patch_dev_lists151(self) -> None:
-        """Test case for patch_dev_lists151
+    def test_lists_post(self) -> None:
+        """Test case for lists_post
 
-        Update List by Id
+        Create a List
         """
         pass
 
-    def test_post_dev_lists(self) -> None:
-        """Test case for post_dev_lists
+    def test_lists_update(self) -> None:
+        """Test case for lists_update
 
-        Create a List
+        Update List by Id
         """
         pass
 

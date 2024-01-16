@@ -95,6 +95,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -166,13 +169,16 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No Content |  -  |
+**401** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -254,6 +260,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -335,6 +343,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -379,7 +389,7 @@ configuration.api_key['x-api-key'] = os.environ["API_KEY"]
 with callchimp.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = callchimp.CampaignsApi(api_client)
-    campaign_request = {"max_retry":2,"name":"Campaign by API","phone_number":4,"type":"blastout"} # CampaignRequest | 
+    campaign_request = {"max_retry":2,"name":"Blastout Campaign by API","phone_number":4,"type":"blastout"} # CampaignRequest | 
 
     try:
         # Create a Campaign
@@ -417,6 +427,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**405** |  |  -  |
+**415** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -501,6 +514,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -585,6 +601,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -668,6 +687,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**415** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

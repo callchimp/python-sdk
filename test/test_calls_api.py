@@ -29,14 +29,28 @@ class TestCallsApi(unittest.TestCase):
     def test_calls_get(self) -> None:
         """Test case for calls_get
 
-        Get Call by ID
+        Get Call by Id
         """
         pass
 
-    def test_calls_list(self) -> None:
-        """Test case for calls_list
+    def test_calls_list_inbound(self) -> None:
+        """Test case for calls_list_inbound
+
+        List Inbound Calls
+        """
+        pass
+
+    def test_calls_list_outbound(self) -> None:
+        """Test case for calls_list_outbound
 
         List Outbound Calls
+        """
+        pass
+
+    def test_calls_post(self) -> None:
+        """Test case for calls_post
+
+        Create a Call
         """
         pass
 
@@ -44,20 +58,6 @@ class TestCallsApi(unittest.TestCase):
         """Test case for calls_reports
 
         Generate Call Reports
-        """
-        pass
-
-    def test_get_dev_calls_inbound(self) -> None:
-        """Test case for get_dev_calls_inbound
-
-        List Inbound Calls
-        """
-        pass
-
-    def test_post_dev_calls(self) -> None:
-        """Test case for post_dev_calls
-
-        Create a Call
         """
         pass
 

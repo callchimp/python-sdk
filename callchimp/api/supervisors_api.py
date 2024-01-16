@@ -109,6 +109,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -176,6 +179,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -243,6 +249,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -281,6 +290,12 @@ class SupervisorsApi:
         # process the body parameter
 
 
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
+        )
 
 
         # authentication setting
@@ -361,6 +376,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -428,6 +446,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -495,6 +516,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -619,6 +643,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -686,6 +712,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -753,6 +781,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -879,6 +909,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -946,6 +978,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1013,6 +1047,8 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1150,6 +1186,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorSendOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1217,6 +1256,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorSendOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1284,6 +1326,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorSendOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1412,6 +1457,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1483,6 +1531,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1554,6 +1605,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1698,6 +1752,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorVerifyOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1769,6 +1826,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorVerifyOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1840,6 +1900,9 @@ class SupervisorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SupervisorVerifyOtpResponse",
+            '401': "Model4XXResponse",
+            '404': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

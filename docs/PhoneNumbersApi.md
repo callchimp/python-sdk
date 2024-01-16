@@ -4,11 +4,11 @@ All URIs are relative to *https://api.callchimp.ai/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_dev_phone_numbers**](PhoneNumbersApi.md#get_dev_phone_numbers) | **GET** /phone_numbers | List Phone Numbers
+[**phone_numbers_list**](PhoneNumbersApi.md#phone_numbers_list) | **GET** /phone_numbers | List Phone Numbers
 
 
-# **get_dev_phone_numbers**
-> PhoneNumberListResponse get_dev_phone_numbers()
+# **phone_numbers_list**
+> PhoneNumberListResponse phone_numbers_list()
 
 List Phone Numbers
 
@@ -50,11 +50,11 @@ with callchimp.ApiClient(configuration) as api_client:
 
     try:
         # List Phone Numbers
-        api_response = api_instance.get_dev_phone_numbers()
-        print("The response of PhoneNumbersApi->get_dev_phone_numbers:\n")
+        api_response = api_instance.phone_numbers_list()
+        print("The response of PhoneNumbersApi->phone_numbers_list:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PhoneNumbersApi->get_dev_phone_numbers: %s\n" % e)
+        print("Exception when calling PhoneNumbersApi->phone_numbers_list: %s\n" % e)
 ```
 
 
@@ -81,6 +81,8 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**401** |  |  -  |
+**405** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

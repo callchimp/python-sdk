@@ -26,13 +26,6 @@ class TestSubscribersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_patch_dev_subscribers_by_id(self) -> None:
-        """Test case for patch_dev_subscribers_by_id
-
-        Update Subscriber by Id
-        """
-        pass
-
     def test_subscribers_delete(self) -> None:
         """Test case for subscribers_delete
 
@@ -58,6 +51,13 @@ class TestSubscribersApi(unittest.TestCase):
         """Test case for subscribers_post
 
         Create one or more Subscriber(s)
+        """
+        pass
+
+    def test_subscribers_update(self) -> None:
+        """Test case for subscribers_update
+
+        Update Subscriber by Id
         """
         pass
 

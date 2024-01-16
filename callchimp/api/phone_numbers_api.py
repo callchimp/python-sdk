@@ -44,7 +44,7 @@ class PhoneNumbersApi:
 
 
     @validate_call
-    def get_dev_phone_numbers(
+    def phone_numbers_list(
         self,
         _request_timeout: Union[
             None,
@@ -85,7 +85,7 @@ class PhoneNumbersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_dev_phone_numbers_serialize(
+        _param = self._phone_numbers_list_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -94,6 +94,8 @@ class PhoneNumbersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhoneNumberListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -107,7 +109,7 @@ class PhoneNumbersApi:
 
 
     @validate_call
-    def get_dev_phone_numbers_with_http_info(
+    def phone_numbers_list_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -148,7 +150,7 @@ class PhoneNumbersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_dev_phone_numbers_serialize(
+        _param = self._phone_numbers_list_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -157,6 +159,8 @@ class PhoneNumbersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhoneNumberListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -170,7 +174,7 @@ class PhoneNumbersApi:
 
 
     @validate_call
-    def get_dev_phone_numbers_without_preload_content(
+    def phone_numbers_list_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -211,7 +215,7 @@ class PhoneNumbersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_dev_phone_numbers_serialize(
+        _param = self._phone_numbers_list_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -220,6 +224,8 @@ class PhoneNumbersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "PhoneNumberListResponse",
+            '401': "Model4XXResponse",
+            '405': "Model4XXResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -228,7 +234,7 @@ class PhoneNumbersApi:
         return response_data.response
 
 
-    def _get_dev_phone_numbers_serialize(
+    def _phone_numbers_list_serialize(
         self,
         _request_auth,
         _content_type,

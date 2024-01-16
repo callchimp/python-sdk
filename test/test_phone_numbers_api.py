@@ -26,8 +26,8 @@ class TestPhoneNumbersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_get_dev_phone_numbers(self) -> None:
-        """Test case for get_dev_phone_numbers
+    def test_phone_numbers_list(self) -> None:
+        """Test case for phone_numbers_list
 
         List Phone Numbers
         """

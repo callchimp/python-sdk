@@ -15,10 +15,10 @@
 import unittest
 import datetime
 
-from callchimp.models.post_dev_calls_request import PostDevCallsRequest
+from callchimp.models.transaction_call_request_by_lead_id import TransactionCallRequestByLeadId
 
-class TestPostDevCallsRequest(unittest.TestCase):
-    """PostDevCallsRequest unit test stubs"""
+class TestTransactionCallRequestByLeadId(unittest.TestCase):
+    """TransactionCallRequestByLeadId unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,28 @@ class TestPostDevCallsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PostDevCallsRequest:
-        """Test PostDevCallsRequest
+    def make_instance(self, include_optional) -> TransactionCallRequestByLeadId:
+        """Test TransactionCallRequestByLeadId
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PostDevCallsRequest`
+        # uncomment below to create an instance of `TransactionCallRequestByLeadId`
         """
-        model = PostDevCallsRequest()
+        model = TransactionCallRequestByLeadId()
         if include_optional:
-            return PostDevCallsRequest(
+            return TransactionCallRequestByLeadId(
                 lead = 56,
-                vendor_lead_code = ''
+                transaction_vars = None
             )
         else:
-            return PostDevCallsRequest(
+            return TransactionCallRequestByLeadId(
                 lead = 56,
-                vendor_lead_code = '',
+                transaction_vars = None,
         )
         """
 
-    def testPostDevCallsRequest(self):
-        """Test PostDevCallsRequest"""
+    def testTransactionCallRequestByLeadId(self):
+        """Test TransactionCallRequestByLeadId"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

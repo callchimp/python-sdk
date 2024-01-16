@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+__version__ = "0.1.3"
 
 # import apis into sdk package
 from callchimp.api.calls_api import CallsApi
@@ -45,6 +45,7 @@ from callchimp.models.call_report_response_stats_inner import CallReportResponse
 from callchimp.models.call_request_by_lead_id import CallRequestByLeadId
 from callchimp.models.call_request_by_vendor_lead_code import CallRequestByVendorLeadCode
 from callchimp.models.call_response import CallResponse
+from callchimp.models.calls_post_request import CallsPostRequest
 from callchimp.models.campaign_add_super_request import CampaignAddSuperRequest
 from callchimp.models.campaign_add_super_response import CampaignAddSuperResponse
 from callchimp.models.campaign_list_response import CampaignListResponse
@@ -61,9 +62,10 @@ from callchimp.models.inbound_call_response_supervisor import InboundCallRespons
 from callchimp.models.lists_list_response import ListsListResponse
 from callchimp.models.lists_request import ListsRequest
 from callchimp.models.lists_response import ListsResponse
+from callchimp.models.model4_xx_response import Model4XXResponse
+from callchimp.models.model4_xx_response_errors_inner import Model4XXResponseErrorsInner
 from callchimp.models.phone_number_list_response import PhoneNumberListResponse
 from callchimp.models.phone_number_response import PhoneNumberResponse
-from callchimp.models.post_dev_calls_request import PostDevCallsRequest
 from callchimp.models.subscriber_list_response import SubscriberListResponse
 from callchimp.models.subscriber_request import SubscriberRequest
 from callchimp.models.subscriber_response import SubscriberResponse
@@ -74,6 +76,7 @@ from callchimp.models.supervisor_response import SupervisorResponse
 from callchimp.models.supervisor_send_otp_response import SupervisorSendOtpResponse
 from callchimp.models.supervisor_verify_otp_request import SupervisorVerifyOtpRequest
 from callchimp.models.supervisor_verify_otp_response import SupervisorVerifyOtpResponse
+from callchimp.models.transaction_call_request_by_lead_id import TransactionCallRequestByLeadId
 from callchimp.models.webhook_list_response import WebhookListResponse
 from callchimp.models.webhook_request import WebhookRequest
 from callchimp.models.webhook_response import WebhookResponse

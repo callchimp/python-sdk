@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **max_retry** | **int** | How many times call should be retried if not picked up | 
 **phone_number** | **int** | PhoneNumber foreign key | 
 **type** | **str** | Type of campaign | 
+**transaction_template** | **str** | Template text with variable placeholders, where variables are represented like &#x60;{var1}&#x60;. Only required for &#x60;transactional&#x60; campaigns. | [optional] 
+**chat_script** | **str** | The GenAI prompt telling the bot how to behave when asked a question or how to continue the conversation. | [optional] 
 
 ## Example
 
