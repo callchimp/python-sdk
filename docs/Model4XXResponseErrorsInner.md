@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of Model4XXResponseErrorsInner from a JSON string
 model4_xx_response_errors_inner_instance = Model4XXResponseErrorsInner.from_json(json)
 # print the JSON string representation of the object
-print Model4XXResponseErrorsInner.to_json()
+print(Model4XXResponseErrorsInner.to_json())
 
 # convert the object into a dict
 model4_xx_response_errors_inner_dict = model4_xx_response_errors_inner_instance.to_dict()
 # create an instance of Model4XXResponseErrorsInner from a dict
-model4_xx_response_errors_inner_form_dict = model4_xx_response_errors_inner.from_dict(model4_xx_response_errors_inner_dict)
+model4_xx_response_errors_inner_from_dict = Model4XXResponseErrorsInner.from_dict(model4_xx_response_errors_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

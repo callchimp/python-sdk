@@ -25,8 +25,6 @@ Delete Supervisor by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.rest import ApiException
 from pprint import pprint
@@ -106,8 +104,6 @@ Get Supervisor by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_response import SupervisorResponse
 from callchimp.rest import ApiException
@@ -190,8 +186,6 @@ List Supervisors
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_list_response import SupervisorListResponse
 from callchimp.rest import ApiException
@@ -273,8 +267,6 @@ Create a Supervisor
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_request import SupervisorRequest
 from callchimp.models.supervisor_response import SupervisorResponse
@@ -302,7 +294,7 @@ configuration.api_key['x-api-key'] = os.environ["API_KEY"]
 with callchimp.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = callchimp.SupervisorsApi(api_client)
-    supervisor_request = {"name":"f0rkb0mb","phone":"+919007455565","priority":1} # SupervisorRequest | 
+    supervisor_request = {"name":"John Doe","phone":"+9190XXXXXXXX","priority":1,"organization":999} # SupervisorRequest | 
 
     try:
         # Create a Supervisor
@@ -357,8 +349,6 @@ Send OTP to Supervisor by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_send_otp_response import SupervisorSendOtpResponse
 from callchimp.rest import ApiException
@@ -441,8 +431,6 @@ Update Supervisor by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_request import SupervisorRequest
 from callchimp.models.supervisor_response import SupervisorResponse
@@ -528,8 +516,6 @@ Verify Supervisor OTP by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.supervisor_verify_otp_request import SupervisorVerifyOtpRequest
 from callchimp.models.supervisor_verify_otp_response import SupervisorVerifyOtpResponse

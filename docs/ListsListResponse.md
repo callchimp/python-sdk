@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ListsListResponse from a JSON string
 lists_list_response_instance = ListsListResponse.from_json(json)
 # print the JSON string representation of the object
-print ListsListResponse.to_json()
+print(ListsListResponse.to_json())
 
 # convert the object into a dict
 lists_list_response_dict = lists_list_response_instance.to_dict()
 # create an instance of ListsListResponse from a dict
-lists_list_response_form_dict = lists_list_response.from_dict(lists_list_response_dict)
+lists_list_response_from_dict = ListsListResponse.from_dict(lists_list_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

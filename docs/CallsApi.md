@@ -5,8 +5,8 @@ All URIs are relative to *https://api.callchimp.ai/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**calls_get**](CallsApi.md#calls_get) | **GET** /calls/{Id} | Get Call by Id
-[**calls_list_inbound**](CallsApi.md#calls_list_inbound) | **GET** /calls/inbound | List Inbound Calls
-[**calls_list_outbound**](CallsApi.md#calls_list_outbound) | **GET** /calls | List Outbound Calls
+[**calls_list_inbound**](CallsApi.md#calls_list_inbound) | **GET** /calls/inbound | List Supervisor Inbound Calls
+[**calls_list_outbound**](CallsApi.md#calls_list_outbound) | **GET** /calls | List Calls
 [**calls_post**](CallsApi.md#calls_post) | **POST** /calls | Create a Call
 [**calls_reports**](CallsApi.md#calls_reports) | **POST** /calls/reports | Generate Call Reports
 
@@ -23,8 +23,6 @@ Get Call by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.call_response import CallResponse
 from callchimp.rest import ApiException
@@ -98,7 +96,7 @@ Name | Type | Description  | Notes
 # **calls_list_inbound**
 > InboundCallListResponse calls_list_inbound(page=page)
 
-List Inbound Calls
+List Supervisor Inbound Calls
 
 
 
@@ -107,8 +105,6 @@ List Inbound Calls
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.inbound_call_list_response import InboundCallListResponse
 from callchimp.rest import ApiException
@@ -138,7 +134,7 @@ with callchimp.ApiClient(configuration) as api_client:
     page = 56 # int | page (optional)
 
     try:
-        # List Inbound Calls
+        # List Supervisor Inbound Calls
         api_response = api_instance.calls_list_inbound(page=page)
         print("The response of CallsApi->calls_list_inbound:\n")
         pprint(api_response)
@@ -182,7 +178,7 @@ Name | Type | Description  | Notes
 # **calls_list_outbound**
 > CallListResponse calls_list_outbound(page=page)
 
-List Outbound Calls
+List Calls
 
 
 
@@ -191,8 +187,6 @@ List Outbound Calls
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.call_list_response import CallListResponse
 from callchimp.rest import ApiException
@@ -222,7 +216,7 @@ with callchimp.ApiClient(configuration) as api_client:
     page = 56 # int | page (optional)
 
     try:
-        # List Outbound Calls
+        # List Calls
         api_response = api_instance.calls_list_outbound(page=page)
         print("The response of CallsApi->calls_list_outbound:\n")
         pprint(api_response)
@@ -274,8 +268,6 @@ Create a Call
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.call_response import CallResponse
 from callchimp.models.calls_post_request import CallsPostRequest
@@ -358,8 +350,6 @@ Generate Call Reports
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.call_report_request import CallReportRequest
 from callchimp.models.call_report_response import CallReportResponse

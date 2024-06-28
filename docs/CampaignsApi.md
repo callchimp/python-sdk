@@ -6,8 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**campaigns_addsuper**](CampaignsApi.md#campaigns_addsuper) | **POST** /campaigns/{Id}/add_super | Add Supervisors to Campaign by Id
 [**campaigns_delete**](CampaignsApi.md#campaigns_delete) | **DELETE** /campaigns/{Id} | Delete Campaign by Id
+[**campaigns_find**](CampaignsApi.md#campaigns_find) | **POST** /campaigns/find | Search Campaign by Name or Id
 [**campaigns_get**](CampaignsApi.md#campaigns_get) | **GET** /campaigns/{Id} | Get Campaign by Id
-[**campaigns_list**](CampaignsApi.md#campaigns_list) | **GET** /campaigns | List Campaigns
+[**campaigns_list**](CampaignsApi.md#campaigns_list) | **GET** /campaigns | List campaigns
 [**campaigns_post**](CampaignsApi.md#campaigns_post) | **POST** /campaigns | Create a Campaign
 [**campaigns_removesuper**](CampaignsApi.md#campaigns_removesuper) | **POST** /campaigns/{Id}/remove_super | Remove Supervisors from Campaign by Id
 [**campaigns_update**](CampaignsApi.md#campaigns_update) | **PATCH** /campaigns/{Id} | Update Campaign by Id
@@ -26,8 +27,6 @@ Add Supervisors to Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_add_super_request import CampaignAddSuperRequest
 from callchimp.models.campaign_add_super_response import CampaignAddSuperResponse
@@ -113,8 +112,6 @@ Delete Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.rest import ApiException
 from pprint import pprint
@@ -182,6 +179,90 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **campaigns_find**
+> List[CampaignResponse] campaigns_find(campaign_find_request, page=page)
+
+Search Campaign by Name or Id
+
+
+
+### Example
+
+* Api Key Authentication (x-api-key):
+
+```python
+import callchimp
+from callchimp.models.campaign_find_request import CampaignFindRequest
+from callchimp.models.campaign_response import CampaignResponse
+from callchimp.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.callchimp.ai/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = callchimp.Configuration(
+    host = "https://api.callchimp.ai/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x-api-key
+configuration.api_key['x-api-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with callchimp.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = callchimp.CampaignsApi(api_client)
+    campaign_find_request = {"query":"rickroll"} # CampaignFindRequest | 
+    page = 56 # int | Page Number (optional)
+
+    try:
+        # Search Campaign by Name or Id
+        api_response = api_instance.campaigns_find(campaign_find_request, page=page)
+        print("The response of CampaignsApi->campaigns_find:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CampaignsApi->campaigns_find: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_find_request** | [**CampaignFindRequest**](CampaignFindRequest.md)|  | 
+ **page** | **int**| Page Number | [optional] 
+
+### Return type
+
+[**List[CampaignResponse]**](CampaignResponse.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**401** |  |  -  |
+**405** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **campaigns_get**
 > CampaignResponse campaigns_get(id)
 
@@ -194,8 +275,6 @@ Get Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_response import CampaignResponse
 from callchimp.rest import ApiException
@@ -268,17 +347,15 @@ Name | Type | Description  | Notes
 # **campaigns_list**
 > CampaignListResponse campaigns_list(page=page)
 
-List Campaigns
+List campaigns
 
-
+##### A paginated list of campaigns 
 
 ### Example
 
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_list_response import CampaignListResponse
 from callchimp.rest import ApiException
@@ -308,7 +385,7 @@ with callchimp.ApiClient(configuration) as api_client:
     page = 56 # int | Page Number (optional)
 
     try:
-        # List Campaigns
+        # List campaigns
         api_response = api_instance.campaigns_list(page=page)
         print("The response of CampaignsApi->campaigns_list:\n")
         pprint(api_response)
@@ -353,15 +430,13 @@ Name | Type | Description  | Notes
 
 Create a Campaign
 
-
+#####  With callchimp.ai, you have access to 4 different types of campaigns:  - **Outbound Bulk**: Campaign that play pre recorded audio to the subscribers / leads. One way broadcast campaign.  - **Outbound AI**: GPT driven outbound AI campaign that runs according to the given script. Bidirectional campaign.   - **Inbound AI**: GPT driven inbound AI campaign that runs according to the given script. Bidirectional campaign.  - **Transactional**: Campaign that play dynamic text to audio to the subscribers / leads. One way campaign. 
 
 ### Example
 
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_request import CampaignRequest
 from callchimp.models.campaign_response import CampaignResponse
@@ -389,7 +464,7 @@ configuration.api_key['x-api-key'] = os.environ["API_KEY"]
 with callchimp.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = callchimp.CampaignsApi(api_client)
-    campaign_request = {"max_retry":2,"name":"Blastout Campaign by API","phone_number":4,"type":"blastout"} # CampaignRequest | 
+    campaign_request = {"max_retry":2,"name":"Outbound Bulk Campaign by API","phone_number":4,"type":"blastout"} # CampaignRequest | 
 
     try:
         # Create a Campaign
@@ -445,8 +520,6 @@ Remove Supervisors from Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_remove_super_request import CampaignRemoveSuperRequest
 from callchimp.models.campaign_remove_super_response import CampaignRemoveSuperResponse
@@ -521,7 +594,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **campaigns_update**
-> CampaignResponse campaigns_update(id, campaign_request)
+> CampaignResponse campaigns_update(id, campaign_update_request)
 
 Update Campaign by Id
 
@@ -532,11 +605,9 @@ Update Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
-from callchimp.models.campaign_request import CampaignRequest
 from callchimp.models.campaign_response import CampaignResponse
+from callchimp.models.campaign_update_request import CampaignUpdateRequest
 from callchimp.rest import ApiException
 from pprint import pprint
 
@@ -562,11 +633,11 @@ with callchimp.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = callchimp.CampaignsApi(api_client)
     id = 56 # int | Numeric id to get
-    campaign_request = {"max_retry":1,"name":"Campaign by API renamed!"} # CampaignRequest | 
+    campaign_update_request = {"max_retry":1,"name":"Campaign by API renamed!"} # CampaignUpdateRequest | 
 
     try:
         # Update Campaign by Id
-        api_response = api_instance.campaigns_update(id, campaign_request)
+        api_response = api_instance.campaigns_update(id, campaign_update_request)
         print("The response of CampaignsApi->campaigns_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -581,7 +652,7 @@ with callchimp.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Numeric id to get | 
- **campaign_request** | [**CampaignRequest**](CampaignRequest.md)|  | 
+ **campaign_update_request** | [**CampaignUpdateRequest**](CampaignUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -619,8 +690,6 @@ Upload audio file to Campaign by Id
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.campaign_upload_audio_response import CampaignUploadAudioResponse
 from callchimp.rest import ApiException

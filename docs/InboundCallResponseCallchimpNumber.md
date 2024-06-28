@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of InboundCallResponseCallchimpNumber from a JSON string
 inbound_call_response_callchimp_number_instance = InboundCallResponseCallchimpNumber.from_json(json)
 # print the JSON string representation of the object
-print InboundCallResponseCallchimpNumber.to_json()
+print(InboundCallResponseCallchimpNumber.to_json())
 
 # convert the object into a dict
 inbound_call_response_callchimp_number_dict = inbound_call_response_callchimp_number_instance.to_dict()
 # create an instance of InboundCallResponseCallchimpNumber from a dict
-inbound_call_response_callchimp_number_form_dict = inbound_call_response_callchimp_number.from_dict(inbound_call_response_callchimp_number_dict)
+inbound_call_response_callchimp_number_from_dict = InboundCallResponseCallchimpNumber.from_dict(inbound_call_response_callchimp_number_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

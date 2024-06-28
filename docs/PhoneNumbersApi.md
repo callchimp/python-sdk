@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **phone_numbers_list**
-> PhoneNumberListResponse phone_numbers_list()
+> PhoneNumberListResponse phone_numbers_list(page=page)
 
 List Phone Numbers
 
@@ -19,8 +19,6 @@ List Phone Numbers
 * Api Key Authentication (x-api-key):
 
 ```python
-import time
-import os
 import callchimp
 from callchimp.models.phone_number_list_response import PhoneNumberListResponse
 from callchimp.rest import ApiException
@@ -47,10 +45,11 @@ configuration.api_key['x-api-key'] = os.environ["API_KEY"]
 with callchimp.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = callchimp.PhoneNumbersApi(api_client)
+    page = 56 # int | Page Number (optional)
 
     try:
         # List Phone Numbers
-        api_response = api_instance.phone_numbers_list()
+        api_response = api_instance.phone_numbers_list(page=page)
         print("The response of PhoneNumbersApi->phone_numbers_list:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,7 +60,10 @@ with callchimp.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page Number | [optional] 
 
 ### Return type
 

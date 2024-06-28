@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of CallReportRequest from a JSON string
 call_report_request_instance = CallReportRequest.from_json(json)
 # print the JSON string representation of the object
-print CallReportRequest.to_json()
+print(CallReportRequest.to_json())
 
 # convert the object into a dict
 call_report_request_dict = call_report_request_instance.to_dict()
 # create an instance of CallReportRequest from a dict
-call_report_request_form_dict = call_report_request.from_dict(call_report_request_dict)
+call_report_request_from_dict = CallReportRequest.from_dict(call_report_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
